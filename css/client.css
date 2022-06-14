@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  div {
+    width: 450px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:  wrap;
+  }
+  
+  button {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease-in;
+    margin-bottom: 1rem;
+  }
+  
+  button:hover {
+    opacity: 0.4;
+  }
+  
+  button.disabled {
+    cursor: wait;
+    opacity: 0.2;
+  }
+  
+  body.loading {
+    cursor: wait !important;
+  }
+  
+  body.loading * {
+    cursor: wait !important;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  
+  button.voted {
+    cursor: not-allowed !important;
+  }
+  
+  button.voted-user span {
+    color: red !important;
+  }
+  
+  span {
+    font-weight: 800;
+    color: green;
+  }
