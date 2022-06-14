@@ -1,0 +1,79 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: #34495e;
+}
+.box h1{
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.box{
+	width: 300px;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #191919;
+	text-align: center;
+}
+.box input[type = "text"],.box input[type="Password"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #3498db;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+}	
+.box input[type = "text"]:focus,.box input[type="Password"]:focus{
+	width: 280px;
+	border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+		border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #2ecc71;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.25s;
+	cursor: pointer;
+
+}
+.box input[type = "submit"]:hover{
+	background:  #3498db;
+}
+form .inscription{
+	color: white;
+}
+form .social-media{
+  margin-top: -10px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+form .social-media p{
+  padding: 5px;
+  width: 20px;
+  margin-left: 10px;
+  border-radius: 100%;
+  border: 1px solid #545454;
+  text-align: center;
+  cursor:pointer;
+  color: white;
+
+}
