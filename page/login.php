@@ -8,13 +8,13 @@
 	</head>
 
 	<body>
-		<form class="box" action="index.html" method="post">
+		<form class="box" action="../includes/login.inc.php" method="post">
 			<h1>Login</h1>
 
 		</div>
-			<input type="text" name="uid" placeholder="Username">
+			<input type="text" name="pnb" placeholder="Passport Number">
 			<input type="Password" name="pwd" placeholder="Password">
-				<p class="inscription">Je n'ai pas de <span>compte</span>. Je m'en <span>crée</span> un.</p>
+			
 		<div align="center">
 			<input type="submit" name="submit" value="Connecting">
 
@@ -24,12 +24,12 @@
 		<?php
 
 			if (isset($_GET["error"])) {
-			if ($_GET["error"] == "emptyinput") {
-				echo " <p> Fill in all fields </p> ";
-			}
-			else if ($_GET["error"] == "wronglogin"){
-				echo " <p> Wrong login ! </p> ";
-			}
+				if ($_GET["error"] == "emptyinput") {
+					echo " <p> Fill in all fields </p> ";
+				}
+				else if ($_GET["error"] == "wronglogin"){
+					echo " <p> Wrong login ! </p> ";
+				}
 			}
 
 		?>

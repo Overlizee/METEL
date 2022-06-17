@@ -6,7 +6,7 @@ function uidExists($conn, $PasspNb){
     $sql = "SELECT * FROM Users WHERE PasspNb = ?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../signup.php?error=stmtfailed");
+        header("location: ../page/login.php?error=stmtfailed");
         exit();
     }
 
@@ -41,7 +41,7 @@ function loginUser($conn, $PasspNb, $pwd){
     $uidExists = uidExists($conn, $PasspNb);
 
     if($uidExists == false){
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../page/login.php?error=wronglogin");
         exit();
     }
 
@@ -49,7 +49,7 @@ function loginUser($conn, $PasspNb, $pwd){
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd == false) {
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../page/login.php?error=wronglogin");
         exit();
     }
     else if ($checkPwd == true) {

@@ -8,13 +8,17 @@
 	</head>
 
     <body>
-        <div>
-        
-        <button class="_vote-btn" data-type="upvote">Vote A: <span id="_upvotes">0</span></button>
-        
-        <button class="_vote-btn" data-type="downvote">Vote B: <span id="_downvotes">0</span></button>
+        <div class="voteBox">
 
-        <script src="../js/client.js"></script>
+            <h1>Veuillez voter</h1>
+        
+            <button class="_vote-btn" data-type="upvote">Vote A: <span id="_upvotes">0</span></button>
+            
+            <button class="_vote-btn" data-type="downvote">Vote B: <span id="_downvotes">0</span></button>
+
+            <button class="_vote-btn" data-type="downvote">Vote Blanc: <span id="_downvotes">0</span></button>
+
+            <script src="../js/client.js"></script>
         
         </div>
     </body>

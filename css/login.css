@@ -1,15 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
-	background: #34495e;
+	background: #FFF9A5;
 }
 .box h1{
-	color: white;
-	text-transform: uppercase;
+	color: rgb(0, 0, 0);
 	font-weight: 500;
+	font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
 }
 .box{
 	width: 300px;
@@ -18,8 +19,9 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	background: #191919;
+	background: #CCDDD3;
 	text-align: center;
+	border-radius: 9%;
 }
 .box input[type = "text"],.box input[type="Password"]{
 	border: 0;
@@ -27,17 +29,18 @@ body{
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #3498db;
+	border: 2px solid #DFEFCA;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
-	color: white;
+	color: rgb(0, 0, 0);
 	border-radius: 24px;
 	transition: 0.25s;
+	font-family: 'Roboto Mono', monospace;
 }	
 .box input[type = "text"]:focus,.box input[type="Password"]:focus{
 	width: 280px;
-	border-color: #2ecc71;
+	border-color: #b843a4;
 }
 .box input[type = "submit"]{
 		border: 0;
@@ -48,17 +51,17 @@ body{
 	border: 2px solid #2ecc71;
 	padding: 14px 40px;
 	outline: none;
-	color: white;
+	color: rgb(0, 0, 0);
 	border-radius: 24px;
 	transition: 0.25s;
 	cursor: pointer;
-
+	font-family: 'Roboto Mono', monospace;
 }
 .box input[type = "submit"]:hover{
-	background:  #3498db;
+	background:  rgba(0, 0, 0, 0.3);
 }
 form .inscription{
-	color: white;
+	color: rgb(0, 0, 0);
 }
 form .social-media{
   margin-top: -10px;
@@ -74,6 +77,6 @@ form .social-media p{
   border: 1px solid #545454;
   text-align: center;
   cursor:pointer;
-  color: white;
+  color: rgb(0, 0, 0);
 
 }
