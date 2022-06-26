@@ -35,9 +35,9 @@ function invalidEmail($email){
     return $result;
 }
 
-function pwdMatch($pwd, $pwdconfirm){
+function pwdMatch($pwd, $pwdConfirm){
     $result;
-    if ($pwd !== $pwdconfirm) {
+    if ($pwd !== $pwdConfirm) {
         $result = true;
     }
     else{
@@ -86,4 +86,63 @@ function createUser($conn, $passpNb, $email, $pwd){
     mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=none");
     exit();
+}
+
+function emptyInputLogin($passpNb, $pwd){
+    $result;
+    if (empty($passpNb) || empty($pwd)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function uidExists($conn, $passpNb){
+    $sql = "SELECT * FROM users WHERE passpNb = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../signup.php?error=stmtfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $passpNb);
+    mysqli_stmt_execute($stmt);
+
+    $resultData = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($resultData)){
+        return $row;
+    }
+    else{
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+function loginUser($conn, $passpNb, $pwd){
+    $uidExists = uidExists($conn, $passpNb);
+
+    if($uidExists == false){
+        header("location: ../page/login.php?error=wrongpasspNb");
+        exit();
+    }
+
+    $pwdHashed = $uidExists["usersPwd"];
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkPwd == false) {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+    else if ($checkPwd == true) {
+        //session_start();
+        $_SESSION["passpNb"] = $uidExists["passpNb"];
+        header("location: ../page/client.php");
+        exit();
+    }
+
 }

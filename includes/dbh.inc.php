@@ -1,6 +1,6 @@
 <?php
 
-    $serverName = "https://databases.000webhost.com/?_ga=2.102553025.1336437071.1655192136-1081842297.1655192136";
+    $serverName = "localhost:3306";
     $dBUserName = "id17952698_user";
     $dBPassword = "dm=0Cdgw|PLuR3ij";
     $dBName = "id17952698_remotevote";

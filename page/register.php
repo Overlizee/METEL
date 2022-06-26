@@ -18,7 +18,7 @@
 				<input type="Password" name="pwdconfirm" placeholder="Confirm Password">
 				
 			<div align="center">
-				<input type="submit" name="submit" value="Connecting">
+				<input type="submit" name="submit" value="Créer mon compte">
 
 				<?php
 
