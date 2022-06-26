@@ -18,9 +18,12 @@
 
             <button class="_vote-btn" data-type="downvote">Vote Blanc: <span id="_downvotes">0</span></button>
 
+            <a href="index.html">Retour</a>
+
             <script src="../js/client.js"></script>
         
         </div>
+
     </body>
 
 </HTML>

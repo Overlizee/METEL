@@ -2,23 +2,26 @@
 <HTML>
 	<head>
 		<meta charset="utf-8">
-		<title>Animation login form</title>
+		<title>Login form</title>
 		<link rel="stylesheet" type="text/css" href="../css/login.css">
 
 	</head>
 
 	<body>
 		<form class="box" action="../includes/login.inc.php" method="post">
-			<h1>Login</h1>
+		
+			<h1>S'identifier</h1>
 
-		</div>
-			<input type="text" name="pnb" placeholder="Passport Number">
-			<input type="Password" name="pwd" placeholder="Password">
-			
-		<div align="center">
-			<input type="submit" name="submit" value="Connecting">
+			</div>
+				<input type="text" name="pnb" placeholder="Passport Number">
+				<input type="Password" name="pwd" placeholder="Password">
+				
+			<div align="center">
+				<input type="submit" name="submit" value="Connecting">
 
 		</form>
+
+		<a href="index.html">Retour</a>
 
 
 		<?php
