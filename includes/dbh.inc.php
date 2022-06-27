@@ -1,9 +1,9 @@
 <?php
 
-    $serverName = "localhost:3306";
-    $dBUserName = "id17952698_user";
-    $dBPassword = "dm=0Cdgw|PLuR3ij";
-    $dBName = "id17952698_remotevote";
+    $serverName = "localhost";
+    $dBUserName = "root";
+    $dBPassword = "";
+    $dBName = "voteadistance";
 
     $conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName);
 

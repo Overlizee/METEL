@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <HTML>
 	<head>
@@ -24,10 +27,17 @@
                 <span></span>
             </label>
             </div>
+
+            <?php
+                if (isset($_SESSION["passpNb"])){
+                    echo "<h3> Bonjour " . $_SESSION["passpNb"] . "</h3>";
+                }
+            ?>
             
             <div class="nav-links">
                 <a href="login.php">S'identifier</a>
                 <a href="register.php">S'enregistrer</a>
+                <a href="../includes/logout.inc.php">Se déconnecter</a>
                 <a href="client.php">Voter</a>
             </div>
         </div>

@@ -1,33 +1,34 @@
 <?php
 
 if (isset($_POST["submit"])){
-    
+
     $passpNb = $_POST["pnb"];
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $pwdConfirm = $_POST["pwdconfirm"];
 
     require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    require_once 'function.inc.php';
+
 
     if (emptyInputSignup($email, $passpNb, $pwd, $pwdConfirm) !== false) {
-        header("location: ../signup.php?error=emptyinput");
+        header("location: ../page/register.php?error=emptyinput");
         exit();
     }
     if (invalidpasspNb($passpNb) !== false) {
-        header("location: ../signup.php?error=invalidpspnb");
+        header("location: ../page/register.php?error=invalidpspnb");
         exit();
     }
     if (invalidEmail($email) !== false) {
-        header("location: ../signup.php?error=invalidemail");
+        header("location: ../page/register.php?error=invalidemail");
         exit();
     }
-    if (pwdMatch($pwd, $pwdconfirm) !== false) {
-        header("location: ../signup.php?error=passwordsdontmatch");
+    if (pwdMatch($pwd, $pwdConfirm) !== false) {
+        header("location: ../page/register.php?error=passwordsdontmatch");
         exit();
     }
     if (passpExists($conn, $passpNb, $email) !== false) {
-        header("location: ../signup.php?error=passpalreadyexist");
+        header("location: ../page/register.php?error=passpalreadyexist");
         exit();
     }
 
@@ -35,7 +36,7 @@ if (isset($_POST["submit"])){
 
 }
 else{
-    header("location: ../signup.php");
+    header("location: ../page/register.php");
     exit();
 }
 

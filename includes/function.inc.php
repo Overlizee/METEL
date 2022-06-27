@@ -84,7 +84,7 @@ function createUser($conn, $passpNb, $email, $pwd){
     mysqli_stmt_bind_param($stmt, "ssss", $passpNb, $email, $hashPwd, $usersType);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
-    header("location: ../signup.php?error=none");
+    header("location: ../page/register.php?error=none");
     exit();
 }
 
@@ -100,7 +100,7 @@ function emptyInputLogin($passpNb, $pwd){
 }
 
 function uidExists($conn, $passpNb){
-    $sql = "SELECT * FROM users WHERE passpNb = ?;";
+    $sql = "SELECT * FROM users WHERE usersPasspNb = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../signup.php?error=stmtfailed");
@@ -142,6 +142,7 @@ function loginUser($conn, $passpNb, $pwd){
         //session_start();
         $_SESSION["passpNb"] = $uidExists["passpNb"];
         header("location: ../page/client.php");
+        //echo "you can vote now for the passport number $uidExists";
         exit();
     }
 
