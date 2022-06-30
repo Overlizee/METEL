@@ -17,6 +17,16 @@
             <div class="nav-header">
             <div class="nav-title">
                 VOTE A DISTANCE
+
+            <?php
+                if ((isset($_SESSION["passpNb"])) && ($_SESSION["usersType"]=='votant')){
+                    echo "<h3> Bonjour " . $_SESSION["passpNb"] . "</h3>";
+                }
+                else if((isset($_SESSION["passpNb"])) && ($_SESSION["usersType"]=='admin')){
+                    echo "<h3> Bonjour " . $_SESSION["passpNb"] . " (ADMIN) </h3>";
+                }
+            ?>
+            
             </div>
                 <h2>Veuillez faire un choix</h2>
             </div>
@@ -27,18 +37,23 @@
                 <span></span>
             </label>
             </div>
-
-            <?php
-                if (isset($_SESSION["passpNb"])){
-                    echo "<h3> Bonjour " . $_SESSION["passpNb"] . "</h3>";
-                }
-            ?>
             
             <div class="nav-links">
                 <a href="login.php">S'identifier</a>
                 <a href="register.php">S'enregistrer</a>
                 <a href="../includes/logout.inc.php">Se déconnecter</a>
-                <a href="client.php">Voter</a>
+                <?php
+                    if (isset($_SESSION["passpNb"])){
+                        echo "<a href='client.php'>Voter</a>";
+                    }
+                    else{
+                        echo"<a class='long' href=''>Vous devez être identifier pour voter</a>";
+                    }
+
+                    if((isset($_SESSION["passpNb"])) && ($_SESSION["usersType"]=='admin')){
+                        echo "<a href='winner.php'>voir le candidat vainqeur</a>";
+                    }
+                ?>
             </div>
         </div>
 

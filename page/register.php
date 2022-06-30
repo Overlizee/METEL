@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <HTML>
 	<head>
@@ -51,7 +55,7 @@
 
 		</form>
 
-        <a href="index.html">Retour</a>
+        <a href="index.php">Retour</a>
 		
 	</body>
 

@@ -135,15 +135,62 @@ function loginUser($conn, $passpNb, $pwd){
     $checkPwd = password_verify($pwd, $pwdHashed);
 
     if ($checkPwd == false) {
-        header("location: ../login.php?error=wronglogin");
+        header("location: ../page/login.php?error=wronglogin");
         exit();
     }
     else if ($checkPwd == true) {
         //session_start();
-        $_SESSION["passpNb"] = $uidExists["passpNb"];
+        $_SESSION["passpNb"] = $uidExists["usersPasspNb"];
+        $_SESSION["usersType"] = $uidExists["usersType"];
         header("location: ../page/client.php");
-        //echo "you can vote now for the passport number $uidExists";
         exit();
     }
 
 }
+
+function vote($conn, $passpNb, $vote){
+
+    $hashVote = password_hash($vote, PASSWORD_DEFAULT);
+
+    $sql = "UPDATE `users` SET `vote` = '$hashVote' WHERE `users`.`usersPasspNb` = '$passpNb';";
+
+    $query_run = mysqli_query($conn, $sql);
+
+    if(($query_run) && ($vote=='a')){
+        header("location: ../page/client.php?error=nonevoteaclick");
+        exit();
+    }
+    else if(($query_run) && ($vote=='b')){
+        header("location: ../page/client.php?error=nonevotebclick");
+        exit();
+    }
+    else if(($query_run) && ($vote=='blanc')){
+        header("location: ../page/client.php?error=nonevoteblancclick");
+        exit();
+    }
+    else{
+        header("location: ../page/client.php?error=notupdated");
+        exit();
+    }
+
+    exit();
+}
+
+/*function winner($conn){
+
+    $hashVote = 
+    $checkPwd = password_verify($pwd, $pwdHashed);
+
+    if ($checkPwd == false) {
+        header("location: ../page/login.php?error=wronglogin");
+        exit();
+    }
+    else if ($checkPwd == true) {
+        //session_start();
+        $_SESSION["passpNb"] = $uidExists["usersPasspNb"];
+        $_SESSION["usersType"] = $uidExists["usersType"];
+        header("location: ../page/client.php");
+        exit();
+    }
+    
+}*/

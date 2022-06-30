@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <HTML>
 	<head>
@@ -21,7 +25,7 @@
 
 		</form>
 
-		<a href="index.html">Retour</a>
+		<a href="index.php">Retour</a>
 
 
 		<?php
@@ -31,7 +35,10 @@
 					echo " <p> Fill in all fields </p> ";
 				}
 				else if ($_GET["error"] == "wronglogin"){
-					echo " <p> Wrong login ! </p> ";
+					echo " <p> Wrong login, password and passport don't match ! </p> ";
+				}
+				else if ($_GET["error"] == "wrongpasspNb"){
+					echo " <p> Wrong passport, it doesnt exist ! </p> ";
 				}
 			}
 
