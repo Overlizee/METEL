@@ -25,9 +25,9 @@
             <h1>Veuillez voter</h1>
             
             <form action="../includes/client.inc.php" method="post">
-                <button class="_vote-btn" data-type="upvote" name="votea">Vote A: <span id="_upvotes">0</span></button>
-                <button class="_vote-btn" data-type="downvote" name="voteb">Vote B: <span id="_downvotes">0</span></button>
-                <button class="_vote-btn" data-type="downvote" name="voteblanc">Vote Blanc: <span id="_downvotes">0</span></button>
+                <button class="_vote-btn" data-type="upvote" name="votea">Vote A <span id="_upvotes"></span></button>
+                <button class="_vote-btn" data-type="downvote" name="voteb">Vote B <span id="_downvotes"></span></button>
+                <button class="_vote-btn" data-type="downvote" name="voteblanc">Vote Blanc <span id="_downvotes"></span></button>
             </form>
 
             <?php
